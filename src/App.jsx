@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { Camera, QrCode, Scan } from 'lucide-react';
-import ScanScreen from './components/Generate';
-import RegisterScreen from './components/Register';
-import QRCodeUploader from './components/Scan';
+import QRCodeUploader from './components/Generate'; // ✅ Rasm yuklash componenti
+import ScanScreen from './components/Scan';         // ✅ Kamera scanner
+import RegisterScreen from './components/Register'; // ✅ Bonus component
+
 
 const App = () => {
   const [activeTab, setActiveTab] = useState('qrcode');
@@ -10,7 +11,7 @@ const App = () => {
   const renderContent = () => {
     switch (activeTab) {
       case 'qrcode':
-        return <QRCodeUploader/>;
+        return <QRCodeUploader />;
       case 'scan':
         return <ScanScreen />;
       case 'register':
